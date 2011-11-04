@@ -56,7 +56,7 @@
        * send_only         : Nothing special required.
        * send_and_receive  : A settings.received method is required
        *
-       * 'this' must be the window 
+       * 'this' must be a dom element 
        * receive_only      : A settings.received method is required
        *                     function(event, data){} 
        *
