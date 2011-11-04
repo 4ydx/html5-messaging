@@ -12,9 +12,9 @@
   'use strict';
   /*
    * The jQuery messaging plugin prepares senders or receivers.
-   * You can have one of each on the page.  I might try to come up with
-   * a more complex mechanism of allowing multiple senders and
-   * receivers on a page.
+   * You can only have one or the other on the page.  
+   * I might try to come up with a more complex mechanism of allowing 
+   * multiple senders and receivers.
    *
    * 2 Scenarios:
    * 1) A receiver:
