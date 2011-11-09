@@ -1,0 +1,39 @@
+<html>
+  <head>
+  <script type="text/javascript" src="js/jquery-1.7.js"></script>
+  <script type="text/javascript" src="js/jquery.messaging.js"></script>
+<script>
+  /* 
+   * This 'received' method must be defined for all pages that receive messages. 
+   * The page is then able to handle the data and give the calling server a
+   * reply where reply takes one 'message' parameter.
+   */
+function received(event, data, reply) {
+  $("#received_data").hide().html(data).fadeIn();
+  /* reply back to the calling server */
+  var message = document.domain + " received " + data;
+  $("#sending_reply").hide().html(message).fadeIn();
+  reply(message);
+}
+
+$(document).ready(function(){
+  $("#url").html(document.domain);
+  $("#receive").messaging('init', 
+  { 'state' : 'receive_and_reply', 'strict' : false, 'received' : received });
+});
+</script>  
+<style>
+  span {
+    color: green;
+  }
+</style>
+  </head>
+  <body>
+    Current Domain: <span id="url"></span>
+    <!-- note that this stores your config settings data -->
+    <div id="receive"></div>
+    <p><span>Received data: </span>"<span id="received_data"></span>"</p>
+    <p><span>Sending reply: </span>"<span id="sending_reply"></span>"</p>
+    <p>Remember, this messaging plugin lets you communicate across entirely different domains.</p>
+  </body>
+</html>

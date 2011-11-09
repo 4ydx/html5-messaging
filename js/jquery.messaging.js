@@ -75,7 +75,8 @@
         $.extend(settings, options);
 
         if(!settings.domain && (settings.state.match(/^send/) || settings.strict)) {
-          $.error('jQuery.messaging requires a "domain" when sending or in strict mode ');
+          $.error(
+              'jQuery.messaging requires a "domain" when sending or in strict mode ');
           return;
         }
         if(!this.is("iframe") && settings.state.match(/^send/)) {
@@ -87,11 +88,12 @@
           return;
         }
         if(settings.state.match(/receive$/) && settings.received == null_function) {
-          $.error('jQuery.messaging state send_and_receive requires settings.received method ');
+          $.error(
+              'jQuery.messaging send_and_receive requires settings.received method ');
           return;
         }
         if(settings.state.match(/^receive/) && settings.received == null_function) {
-          $.error('jQuery.messaging state receive_* requires settings.received method ');
+          $.error('jQuery.messaging receive_* requires settings.received method ');
           return;
         }
         var opt = this.data('messaging');
@@ -118,11 +120,12 @@
           return; 
         }
         if(settings.state == "receive_and_reply") {
+          /* the received method defined by the user with a reply callback */
           settings.received(event, event.data, function(message) {
-            //console.log('origin: ', event.origin);
             event.source.postMessage(message, event.origin);
           });
         } else {
+          /* the received method defined by the user */
           settings.received(event, event.data);
         }
       },

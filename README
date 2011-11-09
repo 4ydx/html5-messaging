@@ -1,0 +1,20 @@
+Requirements
+
+-- Two different domains.  You can use a subdomain of an existing domain if you like.
+-- Able to deploy your own code (your localhost is fine).
+-- Javascript :P
+
+Demos
+
+1) sender (sender.html)        
+   Domain A sends messages to Domain B, but refuses to process any response.
+
+2) Sender/Receiver (both.html) 
+   Domain A and Domain B communicate with one another.
+
+Please read the code comments for further details.
+
+Errors
+
+When incorrectly using jquery.messaging.js you will see errors appear in your
+javascript console.  I recommend using Firefox or Chrome for ease of debugging.

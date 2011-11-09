@@ -1,0 +1,52 @@
+<html>
+  <head>
+    <script type="text/javascript" src="js/jquery-1.7.js"></script>
+    <script type="text/javascript" src="js/jquery.messaging.js"></script>
+    <script>
+      function send_message() {
+        $("#test_iframe").messaging('send', $("#message").val());
+      }
+      function received(event, data) {
+        $("#reply_message").hide().html(data).fadeIn();
+      }
+      $(document).ready(function() {
+        $("#url").html(document.domain);
+        $("#test_iframe").messaging('init', 
+        { 'state' : 'send_and_receive', 'domain' : 'http://demo1.4ydx.com',
+          'received' : received });
+      });
+    </script>
+    <style>
+      iframe {
+        width: 90%;
+      }
+      center {
+        text-align: left;
+      }
+      button {
+        margin-bottom: 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <center>
+      <p>Visit <a href="http://4ydx.com">http://4ydx.com</a> for details and 
+      <a href="https://github.com/4ydx">https://github.com/4ydx</a> for code.</p>
+      <form onsubmit="send_message(); return false;">
+        Current Domain: <span id="url"></span>
+        <br>
+        Send Message: <input id="message" type="text"></input>
+        <br>
+        <input type="submit" value="Send" />
+      </form>
+      <!-- 
+      You can do cross domain messaging with this!
+      You can see the full power of messaging by pointing src at a different domain.
+      -->
+      <br>
+      <iframe id="test_iframe" src="http://demo1.4ydx.com/receiver.html"></iframe>
+      <br>
+      Reply Back: "<span id="reply_message"></span>"
+    </center>
+  </body>
+</html>
