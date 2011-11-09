@@ -1,3 +1,5 @@
+Visit 4ydx.com for details.
+
 Requirements
 
 -- Two different domains.  You can use a subdomain of an existing domain if you like.
@@ -6,7 +8,7 @@ Requirements
 
 Demos
 
-1) sender (sender.html)        
+1) Sender (sender.html)        
    Domain A sends messages to Domain B, but refuses to process any response.
 
 2) Sender/Receiver (both.html) 
