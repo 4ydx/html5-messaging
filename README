@@ -13,7 +13,7 @@ Demos
 1) Sender (sender.html)        
    Domain A sends messages to Domain B, but refuses to process any response.
 
-2) Sender/Receiver (both.html) 
+2) Sender/Receiver (sender_receiver.html) 
    Domain A and Domain B communicate with one another.
 
 Please read the code comments for further details.
