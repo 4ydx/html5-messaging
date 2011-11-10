@@ -12,7 +12,7 @@
       $(document).ready(function() {
         $("#url").html(document.domain);
         $("#test_iframe").messaging('init', 
-        { 'state' : 'send_only', 'domain' : 'http://demo1.4ydx.com' });
+        { 'state' : 'send_only', 'domain' : 'http://demo.japanified.com' });
       });
     </script>
     <style>
@@ -42,11 +42,10 @@
         <input type="submit" value="Send" />
       </form>
       <!-- 
-      You can do cross domain messaging with this!
-      You can see the full power of messaging by pointing src at a different domain.
+      We are talking across domains :)
       -->
       <br>
-      <iframe id="test_iframe" src="http://demo1.4ydx.com/receiver.html"></iframe>
+      <iframe id="test_iframe" src="http://demo.japanified.com/receiver.html"></iframe>
       <p>Note that this demo does not permit messages back from the receiving domain.</p>
       <br>
       <a href="http://demo.4ydx.com">Back</a>
